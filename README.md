@@ -1,81 +1,121 @@
-# Happy Mates - Intra365
+# Intra365 - Happy Mates Integration Framework
 
-> Reference architecture and production patterns from the intra365 platform
-
-## Overview
-
-This repository contains reference implementations and patterns extracted from the production intra365 platform at Nexi. These patterns serve as proven blueprints for building enterprise-grade applications in the Happy Mates ecosystem.
-
-## What's Inside
-
-The intra365 reference architecture demonstrates:
-
-- **Multi-application Workspace**: Turborepo monorepo managing web apps, Office add-ins, browser extensions, and SharePoint integrations
-- **Modern Authentication**: Dual-layer auth with MSAL + JWT httpOnly cookies
-- **GitOps Deployment**: Convention-based Kubernetes deployments with Azure Key Vault CSI integration
-- **OpenTelemetry Observability**: Full-stack distributed tracing and monitoring
-- **Next.js 15 + React 19**: Latest framework patterns with Server Components and Server Actions
-- **Enterprise Integration**: SharePoint Framework (SPFx), Office.js, and browser extension patterns
-
-## Key Patterns
-
-### 1. GitOps Deployment (intra365-chef)
-- Convention-based secret discovery (Key Vault name = repository name)
-- YAML-based configuration management
-- Azure Key Vault CSI driver integration
-- Multi-domain support (MSOPS/INTRA)
-
-### 2. Web Application (intra365-web)
-- Next.js 15 with App Router
-- MSAL + JWT authentication
-- Prisma ORM with PostgreSQL
-- IndexedDB for client-side persistence
-- OpenTelemetry integration
-
-### 3. Browser Extension (intra365-browser)
-- Manifest V3 with @crxjs/vite-plugin
-- React 19 + TypeScript
-- Cross-browser compatibility
-
-### 4. Office Add-ins (intra365-office)
-- Vite-based development
-- Office.js integration
-- MSAL authentication
-- Modern React patterns
-
-### 5. SharePoint Integration
-- SPFx web parts and extensions
-- Modern SharePoint patterns
-- Fluent UI integration
-
-### 6. OpenTelemetry Observability
-- Server-side: @vercel/otel
-- Client-side: Custom browser telemetry
-- Correlation ID tracking
-- Error capture and user context
-
-## Usage
-
-This repository serves as a reference for implementing the [Happy Mates Framework](../chef). Refer to specific patterns when building components of the Happy Mates ecosystem.
-
-## Related Repositories
-
-- [happy-mates/chef](../chef) - GitOps deployment orchestration
-- [happy-mates/knowledge](../knowledge) - Documentation and knowledge base
-
-## Technology Stack
-
-- **Frontend**: React 19, Next.js 15, TypeScript 5
-- **Backend**: Node.js, Prisma, PostgreSQL
-- **Build Tools**: Turborepo, Vite, pnpm
-- **Cloud**: Azure (AKS, Key Vault, Container Registry)
-- **Observability**: OpenTelemetry, Application Insights
-- **Auth**: MSAL, JWT (jose)
-
-## License
-
-This is a public reference repository for the Happy Mates initiative.
+## The Universal Integration Layer for Mate-to-Mate Communication
 
 ---
 
-**Part of the Happy Mates Initiative** - Connecting young people with autism and IT interests to companies through innovative bootcamps.
+## Overview
+
+**intra365** is the foundational integration framework that enables seamless connectivity between different "Mates" within the Happy Mates ecosystem. A "Mate" can be any application, AI agent, service, or tool that implements the intra365 protocol.
+
+### Core Philosophy
+
+- **intra** = within/between (internal connectivity)
+- **365** = continuous availability (always-on integration)
+- **Combined** = A 24/7 internal integration backbone for the Happy Mates ecosystem
+
+## What is a "Mate"?
+
+A **Mate** is any software component that can:
+
+- Communicate through intra365 protocols
+- Provide services to other Mates
+- Consume services from other Mates
+- Participate in the Happy Mates ecosystem
+
+Examples of Mates:
+
+- Web applications
+- AI agents and chatbots
+- Mobile apps
+- Browser extensions  
+- Desktop applications
+- Microservices
+- IoT devices
+- Third-party integrations
+
+## Key Features
+
+### 🔗 Universal Integration Interface
+
+Standardized APIs and messaging patterns that any Mate can implement to join the ecosystem.
+
+### 🎯 Mate Discovery & Registry
+
+Automatic discovery service where Mates announce their capabilities and find other compatible Mates.
+
+### 📡 Event-Driven Communication
+
+Real-time event publishing and subscription system for loose coupling between Mates.
+
+### 🔐 Unified Identity & Authentication
+
+Single sign-on and authorization across all connected Mates in the ecosystem.
+
+### 🚀 Smart Data Orchestration
+
+Intelligent routing and transformation of data between Mates based on their capabilities.
+
+### 📊 Integration Analytics
+
+Monitoring, logging, and analytics for all Mate-to-Mate interactions.
+
+## Architecture Principles
+
+1. **Decentralized but Coordinated**: Each Mate operates independently while participating in the collective ecosystem
+2. **Protocol-First Design**: Well-defined protocols ensure interoperability across different technologies
+3. **Capability-Based Discovery**: Mates advertise what they can do, not what they are
+4. **Resilient Communication**: Built-in retry, fallback, and error handling mechanisms
+5. **Developer-Friendly**: Simple SDKs and clear documentation for easy adoption
+
+For detailed system architecture, see [ARCHITECTURE.md](ARCHITECTURE.md).
+
+### Technology Foundation
+
+The intra365 framework is built on:
+
+- **NATS** - High-performance messaging system for Mate-to-Mate communication
+- **NATS JetStream** - Persistent messaging and state management
+- **Token-based Security** - Central token service with external IdP integration (Entra ID, GitHub, etc.)
+- **Observability Stack** - Comprehensive monitoring with Prometheus, Grafana, Jaeger, and Loki
+
+## Getting Started
+
+### For Mate Developers
+
+1. **Implement the intra365 Protocol**: Add intra365 SDK to your application
+2. **Register Capabilities**: Define what services your Mate provides
+3. **Connect to the Network**: Join the Happy Mates ecosystem
+4. **Start Integrating**: Discover and communicate with other Mates
+
+### For System Integrators
+
+1. **Deploy intra365 Core**: Set up the central coordination infrastructure
+2. **Configure Discovery**: Establish the Mate registry and discovery service
+3. **Set Up Authentication**: Configure unified identity management
+4. **Monitor & Manage**: Use admin tools to oversee the ecosystem
+
+## Use Cases
+
+- **Enterprise Application Integration**: Connect various business applications seamlessly
+- **AI Agent Orchestration**: Enable AI agents to collaborate and share capabilities
+- **Microservices Communication**: Standardize inter-service communication patterns
+- **Third-Party API Aggregation**: Unify external service integrations
+- **Cross-Platform Data Sync**: Keep data synchronized across different applications
+- **Workflow Automation**: Chain together different Mates to create automated processes
+
+## Project Status
+
+🚧 **Early Development Phase** - Concepts and core architecture being defined
+
+## Contributing
+
+We welcome contributions to help shape the future of Mate-to-Mate integration!
+
+## License
+
+MIT License - see [LICENSE](LICENSE) file for details
+
+---
+
+*Making every application a Happy Mate in the connected ecosystem* 🤝
